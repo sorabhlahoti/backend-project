@@ -3,7 +3,6 @@ import fs from "fs"
 import { ApiError } from "./apiError.js";
 
 
-
 const uploadOnCloudinary=async(localFilePath)=>{
 
   try{
@@ -21,8 +20,7 @@ const uploadOnCloudinary=async(localFilePath)=>{
            localFilePath,{
               resource_type:"auto"
            }
-       )
-       
+       )   
        //file has been uploaded successfully
        if (fs.existsSync(localFilePath)) {
         try {
@@ -30,8 +28,7 @@ const uploadOnCloudinary=async(localFilePath)=>{
         } catch (unlinkErr) {
           console.error("Failed to delete local file:", unlinkErr.message);
         }
-      }
-       
+      } 
        return response
 
   }catch(error){
