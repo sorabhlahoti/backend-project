@@ -66,7 +66,7 @@ userSchema.methods.isPasswordCorrect=async function(password){
 
 userSchema.methods.generateAccessToken=function(){
   return jwt.sign({
-    id:this_id,
+    _id:this_id,
     email:this.email,
     username:this.username,
     fullName:this.fullName
@@ -81,7 +81,7 @@ userSchema.methods.generateAccessToken=function(){
 
 userSchema.methods.generateRefreshToken=function(){
   return jwt.sign({
-    id:this_id,
+    _id:this_id,
    
   },
   process.env.REFRESH_TOKEN_SECRET,
